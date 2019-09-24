@@ -10,8 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json.Serialization;
 using StandardApp.Models;
-
+using StandardApp.Services;
 namespace StandardApp
 {
     public class Startup
@@ -36,8 +37,13 @@ namespace StandardApp
                 options.UseSqlServer(Configuration.GetConnectionString("EkatmDbConnection"));
             });
 
+            // register all services aka repositories in DI
+            services.AddScoped<IEkatmService<UserMaster,Guid>, UserMasterService>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .AddJsonOptions(options => options.SerializerSettings.ContractResolver
+              = new DefaultContractResolver())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

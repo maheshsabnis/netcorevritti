@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using StandardApp.Models;
 namespace StandardApp.Services
 {
@@ -22,35 +23,85 @@ namespace StandardApp.Services
         {
             try
             {
+                entity.UserMasterId = Guid.NewGuid().ToString();
                 var res = await ctx.UserMaster.AddAsync(entity);
                 await ctx.SaveChangesAsync();
                 return res.Entity;
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
         }
 
-        public Task<bool> DeleteAsync(Guid id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            bool res = false;
+            try
+            {
+                // 1. Serach record based in GUID
+                var user = await ctx.UserMaster.FindAsync(id);
+                if (user != null)
+                {
+                    ctx.UserMaster.Remove(user);
+                    await ctx.SaveChangesAsync();
+                    res =  true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return res;
         }
 
-        public Task<IEnumerable<UserMaster>> GetAsync()
+        public async Task<IEnumerable<UserMaster>> GetAsync()
         {
-            throw new NotImplementedException();
+            var users = await ctx.UserMaster.ToListAsync();
+            return users;
         }
 
-        public Task<UserMaster> GetAsync(Guid id)
+        public async Task<UserMaster> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var user = await ctx.UserMaster.FindAsync(id);
+                if (user != null)
+                {
+                    return user;
+                }
+                else
+                {
+                    throw new Exception($"User with id {id} not found or removed");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }    
         }
 
-        public Task<bool> UpdateAsync(Guid id, UserMaster entity)
+        public async Task<bool> UpdateAsync(Guid id, UserMaster entity)
         {
-            throw new NotImplementedException();
+            bool res = false;
+            try
+            {
+                var user = await ctx.UserMaster.FindAsync(id);
+                if (user != null)
+                {
+                    // logc for updating the Entity
+                     res = true;
+                }
+                else
+                {
+                    throw new Exception($"User with id {id} not found or removed");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return res;
         }
     }
 }
