@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace StandardApp.Models
+{
+    public partial class Soheader20190307
+    {
+        public string SoheaderId { get; set; }
+        public string Sono { get; set; }
+        public DateTime? Sodate { get; set; }
+        public string CustomerMasterId { get; set; }
+        public string ShipToMasterId { get; set; }
+        public string Destination { get; set; }
+        public string ConsigneeName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+        public string Phone { get; set; }
+        public string Fax { get; set; }
+        public string Mobile { get; set; }
+        public string ContactPerson { get; set; }
+        public string Awbno { get; set; }
+        public string Transporter { get; set; }
+        public string TransporterAddress { get; set; }
+        public string Forwarder { get; set; }
+        public string InsuranceCompany { get; set; }
+        public string CustOrderPono { get; set; }
+        public string QuotationNo { get; set; }
+        public string CustomerRfpno { get; set; }
+        public string Program { get; set; }
+        public string OrderTypeMasterId { get; set; }
+        public string CurrencyMasterId { get; set; }
+        public string DeliveryTerms { get; set; }
+        public string CreditTerm { get; set; }
+        public decimal? CreditDays { get; set; }
+        public decimal? TotalOrderValue { get; set; }
+        public decimal? TotalOrderQty { get; set; }
+        public bool? Mocreated { get; set; }
+        public decimal? CreationLevel { get; set; }
+        public decimal? UserLevel { get; set; }
+        public string IsDeleted { get; set; }
+        public string AddedBy { get; set; }
+        public DateTime? AddedDt { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? ModifiedDt { get; set; }
+        public string SoheaderStatus { get; set; }
+        public string PlantMasterId { get; set; }
+        public DateTime? CustOrderPodt { get; set; }
+        public string Sotype { get; set; }
+        public bool? IsReqMo { get; set; }
+        public string DeliveryId { get; set; }
+        public string NotifyId { get; set; }
+        public string Approver { get; set; }
+        public string SalesEngg { get; set; }
+        public string EmailId { get; set; }
+        public string TimeSlotId { get; set; }
+        public decimal? NoOfPersons { get; set; }
+        public decimal? RatePerPerson { get; set; }
+        public DateTime? EventFrmDt { get; set; }
+        public DateTime? EventToDt { get; set; }
+        public string MachineGroupMasterId { get; set; }
+        public string RefRecId { get; set; }
+        public string RefRecType { get; set; }
+        public string RevisionNo { get; set; }
+        public string Remarks { get; set; }
+        public decimal? TotalGrossAmt { get; set; }
+        public string ZoneMasterId { get; set; }
+        public string SalesType { get; set; }
+        public string CallId { get; set; }
+        public string DispatchMode { get; set; }
+        public string Freight { get; set; }
+        public decimal? BasicAmt { get; set; }
+        public decimal? TotTaxAmt { get; set; }
+        public decimal? TotChargeAmt { get; set; }
+        public decimal? TotDiscAmt { get; set; }
+        public decimal? NetAmt { get; set; }
+        public string ContactPersonName { get; set; }
+        public string ContactMobile { get; set; }
+        public string BillToId { get; set; }
+        public string PriceListHdrId { get; set; }
+        public string PriceListDtlId { get; set; }
+        public decimal? ExRate { get; set; }
+        public decimal? BasicAmtFc { get; set; }
+        public decimal? TotTaxAmtFc { get; set; }
+        public decimal? TotChargeAmtFc { get; set; }
+        public decimal? TotDiscAmtFc { get; set; }
+        public decimal? NetAmtFc { get; set; }
+        public string ItemSummary { get; set; }
+        public string ItemClassification { get; set; }
+        public DateTime? OrderReceivedDate { get; set; }
+        public string OrderRecvdFrom { get; set; }
+        public string InvoiceDeliveryBy { get; set; }
+        public string BankSwiftCode { get; set; }
+        public string Drawback { get; set; }
+        public string Advance { get; set; }
+        public string SionsrNo { get; set; }
+        public string ProjectId { get; set; }
+        public string SocontractId { get; set; }
+        public DateTime? Dobkd { get; set; }
+        public DateTime? Dodisptch { get; set; }
+        public DateTime? Dorcvd { get; set; }
+        public DateTime? Dorej { get; set; }
+        public DateTime? Doack { get; set; }
+        public string QcStatus { get; set; }
+    }
+}

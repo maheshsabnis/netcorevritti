@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace StandardApp.Models
+{
+    public partial class ArchCrmSuspectMaster
+    {
+        public string ArchSuspectId { get; set; }
+        public string ArchiveHistoryId { get; set; }
+        public string PksuspectId { get; set; }
+        public string SuspectCode { get; set; }
+        public string FirmName { get; set; }
+        public string Address { get; set; }
+        public string FkcityId { get; set; }
+        public string BusinessDetails { get; set; }
+        public string FkbusiSegmentId { get; set; }
+        public decimal? Turnover { get; set; }
+        public decimal? NoOfEmployees { get; set; }
+        public decimal? NoOfOffices { get; set; }
+        public string FkcustomerId { get; set; }
+        public bool? IsProspect { get; set; }
+        public bool? IsLead { get; set; }
+        public bool? IsOrder { get; set; }
+        public DateTime? ProspectStatusChangedDate { get; set; }
+        public string ProspectStatusChangedBy { get; set; }
+        public DateTime? LeadStatusChangedDate { get; set; }
+        public string LeadStatusChangedBy { get; set; }
+        public DateTime? OrderStatusChangedDate { get; set; }
+        public string OrderStatusChangedBy { get; set; }
+        public int? MoveToArchieve { get; set; }
+        public string MoveToArchieveBy { get; set; }
+        public string ReasonCode { get; set; }
+        public string AddedBy { get; set; }
+        public DateTime? AddedDt { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? ModifiedDt { get; set; }
+        public string FkterritoryId { get; set; }
+        public string FkenqSourceId { get; set; }
+        public string CompanyUrl { get; set; }
+        public string LeadGivenByid { get; set; }
+        public string EmailMsgId { get; set; }
+        public DateTime? MoveToArchieveDt { get; set; }
+        public string MoveToArchieveReason { get; set; }
+        public string MoveToArchieveNotes { get; set; }
+        public int OpenCalls { get; set; }
+        public int CloseCalls { get; set; }
+        public int OrderReceived { get; set; }
+        public int OrderLost { get; set; }
+        public int OrderRegrete { get; set; }
+        public int CallCloseWithoutOrder { get; set; }
+        public string FirmAlias { get; set; }
+        public string FkconsigneeId { get; set; }
+        public string LastCssrating { get; set; }
+        public DateTime? LastCssdate { get; set; }
+        public DateTime? FuturePlanDate { get; set; }
+        public DateTime? LastSodate { get; set; }
+        public DateTime? LastSoscheduleDate { get; set; }
+        public DateTime? LastShipmentDate { get; set; }
+        public string FkplantId { get; set; }
+        public string FirmTitle { get; set; }
+        public string Remark { get; set; }
+        public string LockFor { get; set; }
+        public DateTime LockTillDate { get; set; }
+        public string IsLocked { get; set; }
+        public string SuspectReferenceId { get; set; }
+        public int? IsReseller { get; set; }
+        public string BusinessType { get; set; }
+        public int? BusEstDate { get; set; }
+        public string Panno { get; set; }
+        public string Vatno { get; set; }
+        public string Tinno { get; set; }
+        public string Tanno { get; set; }
+        public string EdjQualificationSales { get; set; }
+        public string EdjQualificationTech { get; set; }
+        public int? NoOfSalesEmployees { get; set; }
+        public int? NoOfTechEmployees { get; set; }
+        public int? SystemsAvailable { get; set; }
+        public string CurrencyMasterId { get; set; }
+        public string CurrencyDesc { get; set; }
+        public string FkshipToMasterId { get; set; }
+        public decimal Pbt { get; set; }
+        public decimal Pat { get; set; }
+        public decimal Network { get; set; }
+        public decimal Borrowings { get; set; }
+        public string Rating { get; set; }
+        public string Notes { get; set; }
+        public string FkstateId { get; set; }
+        public string FkcountryId { get; set; }
+        public string Gststate { get; set; }
+        public string Gstcode { get; set; }
+        public string TannoName { get; set; }
+        public string ProspectType { get; set; }
+        public string Val1 { get; set; }
+        public string Val2 { get; set; }
+        public string Val3 { get; set; }
+        public string District { get; set; }
+        public string Village { get; set; }
+        public string Val4 { get; set; }
+        public string Val5 { get; set; }
+        public string Sex { get; set; }
+        public string Val6 { get; set; }
+        public string Val9 { get; set; }
+        public string Val10 { get; set; }
+        public string Val7 { get; set; }
+        public string Val8 { get; set; }
+    }
+}
