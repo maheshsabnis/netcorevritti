@@ -56,5 +56,22 @@ namespace StandardApp.Controllers
             }
            
         }
+
+
+        [HttpPut("{id}")]
+        public IActionResult Put(string id, StateMaster state)
+        {
+            try
+            {
+                var res = stateServ.UpdateAsync(id, state).Result;
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }

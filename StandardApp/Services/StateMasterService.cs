@@ -43,9 +43,15 @@ namespace StandardApp.Services
             throw new NotImplementedException();
         }
 
-        public Task<bool> UpdateAsync(string id, StateMaster entity)
+        public async Task<bool> UpdateAsync(string id, StateMaster entity)
         {
-            throw new NotImplementedException();
+            var state = await ctx.StateMaster.FindAsync(id);
+            if (state == null) return false;
+            ctx.Entry(state).State = EntityState.Detached;
+          
+            ctx.StateMaster.Update(entity).State = EntityState.Modified;
+            await ctx.SaveChangesAsync();
+            return true;
         }
     }
 }
