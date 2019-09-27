@@ -39,6 +39,8 @@ namespace StandardApp
 
             // register all services aka repositories in DI
             services.AddScoped<IEkatmService<UserMaster,Guid>, UserMasterService>();
+            services.AddScoped<IEkatmService<StateMaster, string>, StateMasterService>();
+            services.AddScoped<IEkatmService<DeptMaster, string>, DeptMasterService>();
 
             services.AddMvc()
                 .AddJsonOptions(options => options.SerializerSettings.ContractResolver
