@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.ComponentModel.DataAnnotations;
+using StandardApp.ModelsValidators;
 namespace StandardApp.Models
 {
     public partial class UserMaster
@@ -11,13 +12,20 @@ namespace StandardApp.Models
         }
 
         public string UserMasterId { get; set; }
+        [Required(ErrorMessage = "User Login Id is Must")]
+        [LengthValidator(ErrorMessage ="USer Login Id Length cannot be more than 15")]
         public string UserLoginId { get; set; }
+        [Required(ErrorMessage = "User Name is Must")]
         public string UserName { get; set; }
         public string Title { get; set; }
+        [Required(ErrorMessage = "User Password Id is Must")]
         public string UserPassword { get; set; }
         public string HintQuestion { get; set; }
         public string Answer { get; set; }
+        [Required(ErrorMessage = "Dept Master Id is Must")]
         public string DeptMasterId { get; set; }
+        [Required(ErrorMessage = "Email is Must")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         public string Mobile { get; set; }
         public string ExtNo { get; set; }
@@ -29,6 +37,7 @@ namespace StandardApp.Models
         public string IsActive { get; set; }
         public string IsReportingUsingExcel { get; set; }
         public string DesignationId { get; set; }
+        [Required(ErrorMessage = "Emp Id is Must")]
         public string EmpId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

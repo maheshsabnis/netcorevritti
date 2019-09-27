@@ -12,8 +12,8 @@ namespace StandardApp.Controllers
     [Route("api/[controller]")]
     [ApiController] // map the data from body of Http Post and Put  requests
                     // in .NET Core 2.0+
-    // ControllerBase, manages 
-    // 1. Security, 2. Request Processing, 3. Generate Responses
+                    // ControllerBase, manages 
+                    // 1. Security, 2. Request Processing, 3. Generate Responses
     public class UserMasterController : ControllerBase
     {
         private readonly IEkatmService<UserMaster, Guid> _userMasterService;
@@ -23,7 +23,7 @@ namespace StandardApp.Controllers
         /// </summary>
         public UserMasterController(IEkatmService<UserMaster, Guid> userMasterService)
         {
-            _userMasterService = userMasterService; 
+            _userMasterService = userMasterService;
         }
 
         [HttpGet]
@@ -60,9 +60,16 @@ namespace StandardApp.Controllers
         {
             try
             {
-                var response = _userMasterService.CreateAsync(user).Result;
+                if (ModelState.IsValid)
+                {
+                    var response = _userMasterService.CreateAsync(user).Result;
 
-                return Ok(response);
+                    return Ok(response);
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
             }
             catch (Exception ex)
             {
