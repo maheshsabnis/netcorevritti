@@ -42,7 +42,7 @@ namespace StandardApp
                     options.AddPolicy("corspolicy", policy=>policy.AllowAnyOrigin()
                                         .AllowAnyMethod()
                                         .AllowAnyHeader()));
-
+                 
 
             // register all services aka repositories in DI
             services.AddScoped<IEkatmService<UserMaster,Guid>, UserMasterService>();
