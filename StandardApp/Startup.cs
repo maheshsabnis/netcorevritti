@@ -37,6 +37,13 @@ namespace StandardApp
                 options.UseSqlServer(Configuration.GetConnectionString("EkatmDbConnection"));
             });
 
+            // define cors service injection
+            services.AddCors(options => 
+                    options.AddPolicy("corspolicy", policy=>policy.AllowAnyOrigin()
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader()));
+
+
             // register all services aka repositories in DI
             services.AddScoped<IEkatmService<UserMaster,Guid>, UserMasterService>();
             services.AddScoped<IEkatmService<StateMaster, string>, StateMasterService>();
@@ -55,7 +62,8 @@ namespace StandardApp
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            // use the CORS Middleware
+            app.UseCors("corspolicy");
             app.UseMvc();
         }
     }
